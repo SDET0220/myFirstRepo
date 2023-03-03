@@ -6,6 +6,7 @@ public class practice3 {
 		// TODO Auto-generated method stub
 
 	}
- public void remote method () { 
+     public void remote void ethod () { 
 // this remote method 	 
+}
 }
