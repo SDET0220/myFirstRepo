@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="login" path="auth/login" id="9434ab91-de1b-4020-9d30-b6b4d5d44167" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9434ab91-de1b-4020-9d30-b6b4d5d44167fileName">login</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="5863124f-d890-4255-bf01-c57d3d03515f" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c7d93149-2bbe-4ca5-a936-21c757d09580" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+   "email" : "migats.2015@gmail.com",
+   "password" : "Tek@12345"
+}</con:request>
+      <con:originalUri>https://tek-retail-api.azurewebsites.net/auth/login</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

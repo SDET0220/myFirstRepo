@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5df7ba15-0120-439f-8c45-585d43c0733a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="add Address Positive" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5df7ba15-0120-439f-8c45-585d43c0733afileName">add-Address-Positive</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="0a89e9cc-ccb0-4509-a48c-0d6682d239e0">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>8</generatorsTotalNumber>
+          <lastSelectedProperty>7</lastSelectedProperty>
+          <GeneratorType0>CUSTOM</GeneratorType0>
+          <PropertyName0>Country</PropertyName0>
+          <repetitionCountCountry>0</repetitionCountCountry>
+          <repeatValuesCountry>false</repeatValuesCountry>
+          <CustomStringDataGeneratorFormatCountry>United States</CustomStringDataGeneratorFormatCountry>
+          <GeneratorType1>NAME</GeneratorType1>
+          <PropertyName1>Full Name</PropertyName1>
+          <repetitionCountFull49a810bca8de48fc94c33cf869b32645Name>0</repetitionCountFull49a810bca8de48fc94c33cf869b32645Name>
+          <repeatValuesFull49a810bca8de48fc94c33cf869b32645Name>false</repeatValuesFull49a810bca8de48fc94c33cf869b32645Name>
+          <NameTypeName1>Full</NameTypeName1>
+          <NameGenderName1>Any</NameGenderName1>
+          <GeneratorType2>PHONE</GeneratorType2>
+          <PropertyName2>Phone Number</PropertyName2>
+          <repetitionCountPhone49a810bca8de48fc94c33cf869b32645Number>0</repetitionCountPhone49a810bca8de48fc94c33cf869b32645Number>
+          <repeatValuesPhone49a810bca8de48fc94c33cf869b32645Number>false</repeatValuesPhone49a810bca8de48fc94c33cf869b32645Number>
+          <PhoneTemplateTypePhone49a810bca8de48fc94c33cf869b32645Number>XXX-XXX-XXXX</PhoneTemplateTypePhone49a810bca8de48fc94c33cf869b32645Number>
+          <GeneratorType3>ADDRESS</GeneratorType3>
+          <PropertyName3>Address</PropertyName3>
+          <repetitionCountAddress>1</repetitionCountAddress>
+          <repeatValuesAddress>true</repeatValuesAddress>
+          <AddressDataGeneratorRestrictLength>true</AddressDataGeneratorRestrictLength>
+          <AddressDataGeneratorMaxLength>300</AddressDataGeneratorMaxLength>
+          <GeneratorType4>SET</GeneratorType4>
+          <PropertyName4>Apartment</PropertyName4>
+          <repetitionCountApartment>0</repetitionCountApartment>
+          <repeatValuesApartment>false</repeatValuesApartment>
+          <ValueFromSetIsSequenceValueApartment>false</ValueFromSetIsSequenceValueApartment>
+          <ValueFromSetStringsApartment>100</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment>200</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment>300</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment/>
+          <GeneratorType5>CITY</GeneratorType5>
+          <PropertyName5>City</PropertyName5>
+          <repetitionCountCity>1</repetitionCountCity>
+          <repeatValuesCity>false</repeatValuesCity>
+          <GeneratorType6>STATE</GeneratorType6>
+          <PropertyName6>State</PropertyName6>
+          <repetitionCountState>0</repetitionCountState>
+          <repeatValuesState>false</repeatValuesState>
+          <StatesCountryState>United States</StatesCountryState>
+          <StatesFormatState>Full</StatesFormatState>
+          <GeneratorType7>USZIP</GeneratorType7>
+          <PropertyName7>Zip Code</PropertyName7>
+          <repetitionCountZip49a810bca8de48fc94c33cf869b32645Code>0</repetitionCountZip49a810bca8de48fc94c33cf869b32645Code>
+          <repeatValuesZip49a810bca8de48fc94c33cf869b32645Code>false</repeatValuesZip49a810bca8de48fc94c33cf869b32645Code>
+          <USZipCodesDataGeneratorFormatZip49a810bca8de48fc94c33cf869b32645Code>XXXXX</USZipCodesDataGeneratorFormatZip49a810bca8de48fc94c33cf869b32645Code>
+          <escapeSpaceSequence>49a810bca8de48fc94c33cf869b32645</escapeSpaceSequence>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Country</con:property>
+      <con:property>Full Name</con:property>
+      <con:property>Phone Number</con:property>
+      <con:property>Address</con:property>
+      <con:property>Apartment</con:property>
+      <con:property>City</con:property>
+      <con:property>State</con:property>
+      <con:property>Zip Code</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="GenerateToken" id="97005df1-dc6c-4ec7-8f57-f2cf939c8dca">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>2e3133ec-3368-46dd-9904-1029ee029a17</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>PARALLELL</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="45a884a5-16fc-4b58-bb8a-6d7f26a1a45c">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/address" methodName="addAddress" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="4bea4500-2cce-4052-b03e-6858ac3d6b47" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[LoginTest Suite#LoginTestPositive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+   "country" : "${Data Source#Country}",
+   "fullName" : "${Data Source#Full Name}",
+   "phoneNumber" : "${Data Source#Phone Number}",
+   "street" : "${Data Source#Address}",
+   "apartment" : "${Data Source#Apartment}",
+   "city" : "${Data Source#City}",
+   "state" : "${Data Source#State}",
+   "zipCode" : "${Data Source#Zip Code}"
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="21837ad3-5575-49d8-aee0-85fb9bd01031" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="2efba253-9882-4ec1-a103-43fea687276a" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="a18f7cde-dfd9-49aa-8d8a-9f9519d099d9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['id']</con:path>
+              <con:element>id</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>6362</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['country']</con:path>
+              <con:element>country</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Country}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['fullName']</con:path>
+              <con:element>fullName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Full Name}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['phoneNumber']</con:path>
+              <con:element>phoneNumber</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Phone Number}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['street']</con:path>
+              <con:element>street</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Address}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['apartment']</con:path>
+              <con:element>apartment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Apartment}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['city']</con:path>
+              <con:element>city</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#City}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['state']</con:path>
+              <con:element>state</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#State}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['zipCode']</con:path>
+              <con:element>zipCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Zip Code}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['userId']</con:path>
+              <con:element>userId</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>4487</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['updatedAt']</con:path>
+              <con:element>updatedAt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2023-04-08T02:56:21.668Z</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['createdAt']</con:path>
+              <con:element>createdAt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2023-04-08T02:56:21.668Z</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"id":6362,"country":"United States","fullName":"Sean Wade","phoneNumber":"143-968-4732","street":"98280 WestSaint Vincent and The Grenadines Ln.","apartment":"200","city":"Muncie","state":"Arkansas","zipCode":"05935","userId":4487,"updatedAt":"2023-04-08T02:56:21.668Z","createdAt":"2023-04-08T02:56:21.668Z"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="JDBC Request" id="f72f0b7e-4c4a-437d-86df-d08bdb510cb1">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>Retail Database</con:dbConnectionName>
+      <con:driver>com.mysql.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:mysql://tek-database-server.mysql.database.azure.com:3306/retail?user=tek_student_user&amp;password=PASS_VALUE</con:connectionString>
+      <con:password>may_2022</con:password>
+      <con:connectionProperties/>
+      <con:query>select * from retail.addresses
+where userId = 4487
+and isDeleted = 0
+and id = 6364</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

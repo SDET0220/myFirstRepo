@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b1c7bab2-a58a-4335-a09f-9f4628dc55f8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="add Address Negative" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b1c7bab2-a58a-4335-a09f-9f4628dc55f8fileName">add-Address-Negative</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="88409ff1-e64d-487b-af56-bc521eafc981">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>8</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>Full Name</PropertyName0>
+          <repetitionCountFull49a810bca8de48fc94c33cf869b32645Name>0</repetitionCountFull49a810bca8de48fc94c33cf869b32645Name>
+          <repeatValuesFull49a810bca8de48fc94c33cf869b32645Name>false</repeatValuesFull49a810bca8de48fc94c33cf869b32645Name>
+          <NameTypeName0>Full</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <GeneratorType1>PHONE</GeneratorType1>
+          <PropertyName1>Phone Number</PropertyName1>
+          <repetitionCountPhone49a810bca8de48fc94c33cf869b32645Number>0</repetitionCountPhone49a810bca8de48fc94c33cf869b32645Number>
+          <repeatValuesPhone49a810bca8de48fc94c33cf869b32645Number>false</repeatValuesPhone49a810bca8de48fc94c33cf869b32645Number>
+          <PhoneTemplateTypePhone49a810bca8de48fc94c33cf869b32645Number>XXX-XXX-XXXX</PhoneTemplateTypePhone49a810bca8de48fc94c33cf869b32645Number>
+          <GeneratorType2>ADDRESS</GeneratorType2>
+          <PropertyName2>Address</PropertyName2>
+          <repetitionCountAddress>1</repetitionCountAddress>
+          <repeatValuesAddress>true</repeatValuesAddress>
+          <AddressDataGeneratorRestrictLength>true</AddressDataGeneratorRestrictLength>
+          <AddressDataGeneratorMaxLength>300</AddressDataGeneratorMaxLength>
+          <GeneratorType3>SET</GeneratorType3>
+          <PropertyName3>Apartment</PropertyName3>
+          <repetitionCountApartment>0</repetitionCountApartment>
+          <repeatValuesApartment>false</repeatValuesApartment>
+          <ValueFromSetIsSequenceValueApartment>false</ValueFromSetIsSequenceValueApartment>
+          <ValueFromSetStringsApartment>100</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment>200</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment>300</ValueFromSetStringsApartment>
+          <ValueFromSetStringsApartment/>
+          <GeneratorType4>CITY</GeneratorType4>
+          <PropertyName4>City</PropertyName4>
+          <repetitionCountCity>1</repetitionCountCity>
+          <repeatValuesCity>false</repeatValuesCity>
+          <GeneratorType5>STATE</GeneratorType5>
+          <PropertyName5>State</PropertyName5>
+          <repetitionCountState>0</repetitionCountState>
+          <repeatValuesState>false</repeatValuesState>
+          <StatesCountryState>United States</StatesCountryState>
+          <StatesFormatState>Full</StatesFormatState>
+          <GeneratorType6>USZIP</GeneratorType6>
+          <PropertyName6>Zip Code</PropertyName6>
+          <repetitionCountZip49a810bca8de48fc94c33cf869b32645Code>0</repetitionCountZip49a810bca8de48fc94c33cf869b32645Code>
+          <repeatValuesZip49a810bca8de48fc94c33cf869b32645Code>false</repeatValuesZip49a810bca8de48fc94c33cf869b32645Code>
+          <USZipCodesDataGeneratorFormatZip49a810bca8de48fc94c33cf869b32645Code>XXXXX</USZipCodesDataGeneratorFormatZip49a810bca8de48fc94c33cf869b32645Code>
+          <GeneratorType7>COUNTRY</GeneratorType7>
+          <PropertyName7>Country</PropertyName7>
+          <repetitionCountCountry>0</repetitionCountCountry>
+          <repeatValuesCountry>false</repeatValuesCountry>
+          <escapeSpaceSequence>49a810bca8de48fc94c33cf869b32645</escapeSpaceSequence>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Country</con:property>
+      <con:property>Full Name</con:property>
+      <con:property>Phone Number</con:property>
+      <con:property>Address</con:property>
+      <con:property>Apartment</con:property>
+      <con:property>City</con:property>
+      <con:property>State</con:property>
+      <con:property>Zip Code</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="GenerateToken" id="86b3284a-0e0a-4ee4-a92d-400797cdf2ef">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>2e3133ec-3368-46dd-9904-1029ee029a17</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>PARALLELL</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request empty body" id="453437d6-bbcc-4f13-887b-71719df2b652">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/address" methodName="addAddress" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request empty body" id="4bea4500-2cce-4052-b03e-6858ac3d6b47" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[LoginTest Suite#LoginTestPositive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+   "country" : "",
+   "fullName" : "",
+   "phoneNumber" : "",
+   "street" : "",
+   "apartment" : "",
+   "city" : "",
+   "state" : "",
+   "zipCode" : ""
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="2efba253-9882-4ec1-a103-43fea687276a" name="Response SLA">
+          <con:configuration>
+            <SLA>400</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="20a44dbe-e3c1-4c60-bf11-98977ae08eab" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['type']</con:path>
+              <con:element>type</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ValidationError</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['country'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Country is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['fullName'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Full Name is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone Number is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][1]</con:path>
+              <con:element>1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>please enter valid phone number</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['street'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Street is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['city'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>City is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['state'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>State is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['zipCode'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Zip Code is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['zipCode'][1]</con:path>
+              <con:element>1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>zipcode can be 5 or 9 digits</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"type":"ValidationError","errors":{"body":{"country":["Country is a required field"],"fullName":["Full Name is a required field"],"phoneNumber":["Phone Number is a required field","please enter valid phone number"],"street":["Street is a required field"],"city":["City is a required field"],"state":["State is a required field"],"zipCode":["Zip Code is a required field","zipcode can be 5 or 9 digits"]}}}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request wrong country" id="e0aeab83-baa8-4a48-95a0-6ad90c45f898">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/address" methodName="addAddress" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request wrong country" id="4bea4500-2cce-4052-b03e-6858ac3d6b47" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[LoginTest Suite#LoginTestPositive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+   "country" : "No where",
+   "fullName" : "${Data Source#Full Name}",
+   "phoneNumber" : "${Data Source#Phone Number}",
+   "street" : "${Data Source#Address}",
+   "apartment" : "${Data Source#Apartment}",
+   "city" : "${Data Source#City}",
+   "state" : "No where",
+   "zipCode" : "${Data Source#Zip Code}"
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="21837ad3-5575-49d8-aee0-85fb9bd01031" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="2efba253-9882-4ec1-a103-43fea687276a" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request No phone number" id="34e9be9f-4c96-45ff-a854-a1053db1a0c7">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/address" methodName="addAddress" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request No phone number" id="4bea4500-2cce-4052-b03e-6858ac3d6b47" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[LoginTest Suite#LoginTestPositive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+   "country" : "${Data Source#Country}",
+   "fullName" : "${Data Source#Full Name}",
+   "phoneNumber" : "",
+   "street" : "${Data Source#Address}",
+   "apartment" : "${Data Source#Apartment}",
+   "city" : "${Data Source#City}",
+   "state" : "${Data Source#State}",
+   "zipCode" : "${Data Source#Zip Code}"
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="21837ad3-5575-49d8-aee0-85fb9bd01031" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="2efba253-9882-4ec1-a103-43fea687276a" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

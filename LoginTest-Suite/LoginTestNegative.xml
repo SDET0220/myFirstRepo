@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="21641a4d-0a97-4218-ad4c-332a7112f2e8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="LoginTestNegative" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="21641a4d-0a97-4218-ad4c-332a7112f2e8fileName">LoginTestNegative</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request-wrongEmail" id="987fcb7b-cdaa-445e-bd09-4ab357b1d027">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/auth/login" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request-wrongEmail" id="c7d93149-2bbe-4ca5-a936-21c757d09580" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+   "email" : "${Data Source#emailValue}",
+   "password" : "${Data Source#coorectPassword}"
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/auth/login</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="e884288c-aa48-4be9-9366-eadccda03391" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Valid HTTP Status Codes" id="ee31f8ba-eb74-4f76-a200-ee00d36abb09" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request-emtpty body" id="e27f4194-f30b-4c35-ac62-c39977013e6b">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/auth/login" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request-emtpty body" id="c7d93149-2bbe-4ca5-a936-21c757d09580" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+   "email" : "",
+   "password" : ""
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/auth/login</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="e884288c-aa48-4be9-9366-eadccda03391" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Valid HTTP Status Codes" id="ee31f8ba-eb74-4f76-a200-ee00d36abb09" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="954b6371-7186-48d3-aa4d-59c62ff04c61" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errors']['body']['email'][0]</path>
+            <content>"Email is a required field"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="96f751b9-5730-43e8-8817-8c21dead4910" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errors']['body']['password'][0]</path>
+            <content>"Password is a required field"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request-wrongPassword" id="2c5ef9ad-01de-4a34-a91a-0ef8dffce873">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/auth/login" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request-wrongPassword" id="c7d93149-2bbe-4ca5-a936-21c757d09580" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+   "email" : "migats.2015@gmail.com",
+   "password" : "${Data Source#PasswordValue}"
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/auth/login</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="e884288c-aa48-4be9-9366-eadccda03391" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Valid HTTP Status Codes" id="ee31f8ba-eb74-4f76-a200-ee00d36abb09" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Sensitive Information Exposure" id="226f2222-a452-482b-a3ec-402447631636" name="Sensitive Information Exposure">
+          <con:configuration>
+            <AssertionSpecificExposureList>~(?s).*Runtime (E|e)rror.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*SQLSTATE: [A-Z0-9].*###[Database error messages] Internal database information can be misused by hackers</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(s|S)tack:.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(s|S)yntax (e|E)rror\s.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*\w+/\d{1,2}(\.\d{1,3})+.*###[Version x.y.z] Exposing version numbers gives
+            unnecessary hints on your systems vulnerabilities</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*Invalid column name\s.*###[Database error messages] Internal database information can be misused by hackers</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*
+            (ORA|EXP|IMP|KUP|UDE|UDI|DBV|LCD|QSM|OCI|RMAN|LFI|PLS|PLQ|AMD|CLSR|PROC|PROT|TNS|NNC|NLP|NNF|NMP|NCR|NZE|O2F|O2I|O2U|PCB|PCC|SQL|AUD|IMG|VID|DRG|LPX|LSX)-\d{5}\s
+        .*###[Database error messages] Internal database information can be misused by hackers</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(p|P)owered by:? ([a-zA-Z]+)( [a-zA-Z]+){0,3}( |/)\d\.\d{1,2}\.\d{1,3}.*###[Version x.y.z] Exposing version numbers gives
+            unnecessary hints on your systems vulnerabilities</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*at [\w\$]+(\.[\w\$&lt;>\[\],]+|\.\.ctor)+(\((([\w\$&lt;>\`\[\]]+ [\w\$&lt;>]+, )*(([\w\$&lt;>\`\[\]]+
+            [\w\$&lt;>]+)))\)|\(\))
+        .*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*&lt;\w+:frame\s*class=".*"\s*line=".*"\s*method=".*"\s*/>.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*Traceback \(most recent call last\):.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*((I|i)ncorrect|(I|i)nvalid) (s|S)yntax.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(s|S)tack ?(t|T)race.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(e|E)rror was:\s.*###[Database error messages] Internal database information can be misused by hackers</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*(v|V)ersion:? \d\.\d{1,2}\.{1,3}-?.*###[Version x.y.z] Exposing version numbers gives
+            unnecessary hints on your systems vulnerabilities</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*from [\w\$]+(\.[\w\$&lt;>]+)+:\d+:in `.+'.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*Error in process &lt;\d+\.\d+\.\d+> with exit value:.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*STACK\s?TRACE.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*Warning: [\w]+\(\) .+ in .+ on line \d{1,6}.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*((A|a)pache|vBulletin|MySQL|PostgreSQL|phpBB|Internet Information Services)( |/)\d{1,2}(\.\d{1,3})+
+        .*###[Version x.y.z] Exposing version numbers gives
+            unnecessary hints on your systems vulnerabilities</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*at [a-zA-Z][\w\$]*(\.[a-zA-Z][\w\$]*)+\((Unknown Source|Native
+            Method|[a-zA-Z][\w\$]*\.([a-zA-Z]{3,5}):\d+)\)
+        .*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*[^\s]+\.rb:\d+:in `.+'.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <AssertionSpecificExposureList>~(?s).*File ".+", line [0-9]{1,6}, in.*###[Stacktrace] Can give hackers information about which software or language you are using</AssertionSpecificExposureList>
+            <IncludeProjectSpecific>true</IncludeProjectSpecific>
+            <IncludeGlobal>false</IncludeGlobal>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="Data Source" id="bab0af8f-e27a-44ed-8ef3-9e26c373b039">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>3</generatorsTotalNumber>
+          <lastSelectedProperty>2</lastSelectedProperty>
+          <GeneratorType0>CUSTOM</GeneratorType0>
+          <PropertyName0>PasswordValue</PropertyName0>
+          <repetitionCountPasswordValue>0</repetitionCountPasswordValue>
+          <repeatValuesPasswordValue>false</repeatValuesPasswordValue>
+          <CustomStringDataGeneratorFormatPasswordValue>%STR(8,10,True,True,True,True)</CustomStringDataGeneratorFormatPasswordValue>
+          <GeneratorType1>EMAIL</GeneratorType1>
+          <PropertyName1>emailValue</PropertyName1>
+          <repetitionCountemailValue>0</repetitionCountemailValue>
+          <repeatValuesemailValue>false</repeatValuesemailValue>
+          <GeneratorType2>CUSTOM</GeneratorType2>
+          <PropertyName2>coorectPassword</PropertyName2>
+          <repetitionCountcoorectPassword>0</repetitionCountcoorectPassword>
+          <repeatValuescoorectPassword>false</repeatValuescoorectPassword>
+          <CustomStringDataGeneratorFormatcoorectPassword>Tek@12345</CustomStringDataGeneratorFormatcoorectPassword>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>PasswordValue</con:property>
+      <con:property>emailValue</con:property>
+      <con:property>coorectPassword</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
